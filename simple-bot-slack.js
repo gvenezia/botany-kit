@@ -26,6 +26,7 @@ const middleware = require('botkit-middleware-watson')({
   version_date: '2017-05-26'
 });
 
+// ====================== Bot ======================
 // Configure the bot called "botany"
 const slackController = Botkit.slackbot();
 const slackBot = slackController.spawn({
@@ -50,9 +51,16 @@ slackController.hears(['.*'], ['direct_message', 'direct_mention', 'mention'], f
 
 slackBot.startRTM();
 
-// Create an Express app
+
+// =========== Create an Express app ===========
 const app = express();
 const port = process.env.PORT || 5000;
+
+// Root Route
+app.get("/", function(req, res){
+   res.send("Botany is up and running!");
+});
+
 app.set('port', port);
 app.listen(port, function() {
   console.log('Client server listening on port ' + port);
