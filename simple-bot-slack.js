@@ -66,9 +66,9 @@ app.listen(port, function() {
   console.log('Client server listening on port ' + port);
 });
 
-// Ping app after 29 minutes
-const http = require("http");
-setInterval(function() {
-    http.get("https://botany-kit.herokuapp.com/");
-    res.send("Botany was prevented from going to sleep!");
-}, 1740000); // every 29 minutes (60,000 per minute * 29 minutes)
+// // Ping app after 29 minutes
+// const http = require("http");
+// setInterval(function() {
+//     http.get("https://botany-kit.herokuapp.com/");
+//     res.send("Botany was prevented from going to sleep!");
+// }, 1740000); // every 29 minutes (60,000 per minute * 29 minutes)
